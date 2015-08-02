@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:orientation="horizontal"
+    android:gravity="bottom"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_l">
+        
+        <ImageView
+        android:id="@+id/iv_h1l"
+        
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:contentDescription="h1l"
+        android:src="@drawable/digit0l" />
+
+        <ImageView
+        android:id="@+id/iv_h2l"
+        
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:contentDescription="h2l"
+        android:src="@drawable/digit0l" />
+    
+        <ImageView
+        android:id="@+id/iv_hour_iconl"
+        
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:contentDescription="minIconl"
+        android:src="@drawable/hour_icon_l" />
+
+        <ImageView
+        android:id="@+id/iv_m1l"
+        
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:contentDescription="m1l"
+        android:src="@drawable/digit0l" />
+
+        <ImageView
+        android:id="@+id/iv_m2l"
+        
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:contentDescription="m2l"
+        android:src="@drawable/digit0l" />
+                
+        <ImageView
+        android:id="@+id/iv_min_icon_l"
+        
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:contentDescription="minIconl"
+        android:src="@drawable/min_icon_l" />
+
+</LinearLayout><!-- From: file:/D:/android_project/sidonia_clock/app/src/main/res/layout/widget_large.xml -->
