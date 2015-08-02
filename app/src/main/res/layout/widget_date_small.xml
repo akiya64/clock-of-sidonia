@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal"
+        android:gravity="bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/widget_margin"
+        android:background="@drawable/bg_s" >
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="h1"
+            android:src="@drawable/digit0" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="h2"
+            android:src="@drawable/digit0" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="minIcon"
+            android:src="@drawable/hour_icon" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="m1"
+            android:src="@drawable/digit0" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="m2"
+            android:src="@drawable/digit0" />
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="minIcon"
+            android:src="@drawable/min_icon" />
+    </LinearLayout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:orientation="horizontal"
+    android:gravity="bottom"
+    android:layout_width="212dp"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/widget_margin"
+        android:layout_marginTop="5dp">
+
+        <ImageView
+        android:id="@+id/weekday"
+
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+
+        android:contentDescription="h1"
+        android:src="@drawable/digit0"
+            android:maxHeight="20dp"
+            android:background="#ffffffff" />
+
+        <ImageView
+        android:id="@+id/month_1"
+
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+
+        android:contentDescription="h2"
+        android:src="@drawable/digit0"
+            android:maxHeight="20dp"
+            android:minHeight="20dp" />
+
+        <ImageView
+        android:id="@+id/month_2"
+
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+
+        android:contentDescription="minIcon"
+        android:src="@drawable/digit0" />
+
+        <ImageView
+        android:id="@+id/month_icon"
+
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+
+        android:contentDescription="m1"
+        android:src="@drawable/min_icon" />
+
+        <ImageView
+        android:id="@+id/day_1"
+
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+
+        android:contentDescription="m2"
+        android:src="@drawable/digit0" />
+
+        <ImageView
+            android:id="@+id/day_2"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:contentDescription="m2"
+            android:src="@drawable/digit0" />
+
+        <ImageView
+        android:id="@+id/day_icon"
+
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+
+        android:contentDescription="minIcon"
+        android:src="@drawable/min_icon" />
+
+</LinearLayout>
+
+</LinearLayout>
