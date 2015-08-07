@@ -23,13 +23,13 @@ import android.content.Intent;
 import android.widget.RemoteViews;
 
 /**
- * ClockWidget3x1
+ * ClockWidget4x2
  * 
  * @author Kitami Akiya
  */
 
-public class ClockWidgetSmallDate extends ClockWidgetBase {
-
+public class ClockWidgetDateLarge extends ClockWidgetBase {
+    
     /** 配置されている全ウィジェットの時刻更新をかける
     /ResouceSelecterで時刻1桁ごとに対応する数字画像を呼び出して、
     /各数字のImageViewのソースを更新する*/
@@ -58,13 +58,13 @@ public class ClockWidgetSmallDate extends ClockWidgetBase {
         AppWidgetManager ap = AppWidgetManager.getInstance(context);
         ResourceSelecter rs = new ResourceSelecter();
         ComponentName cn = new ComponentName(context,this.getClass());
-        RemoteViews rv = new RemoteViews(context.getPackageName(), R.layout.widget_small);
+        RemoteViews rv = new RemoteViews(context.getPackageName(), R.layout.widget_large);
 
         /* imageViewにリソースを設定 */
-        rv.setImageViewResource(R.id.iv_h1, rs.getH1());
-        rv.setImageViewResource(R.id.iv_h2, rs.getH2());
-        rv.setImageViewResource(R.id.iv_m1, rs.getM1());
-        rv.setImageViewResource(R.id.iv_m2, rs.getM2());
+        rv.setImageViewResource(R.id.iv_h1l, rs.getH1L());
+        rv.setImageViewResource(R.id.iv_h2l, rs.getH2L());
+        rv.setImageViewResource(R.id.iv_m1l, rs.getM1L());
+        rv.setImageViewResource(R.id.iv_m2l, rs.getM2L());
 
         ap.updateAppWidget(cn, rv);
     }

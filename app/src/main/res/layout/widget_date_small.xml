@@ -62,76 +62,94 @@
 
     android:orientation="horizontal"
     android:gravity="bottom"
-    android:layout_width="212dp"
-    android:layout_height="wrap_content"
+    android:layout_width="236dp"
+    android:layout_height="fill_parent"
     android:padding="@dimen/widget_margin"
-        android:layout_marginTop="5dp">
+        android:weightSum="1">
 
         <ImageView
         android:id="@+id/weekday"
 
-        android:layout_width="wrap_content"
-        android:layout_height="20dp"
+        android:layout_width="47dp"
+        android:layout_height="47dp"
 
         android:contentDescription="h1"
-        android:src="@drawable/digit0"
-            android:maxHeight="20dp"
-            android:background="#ffffffff" />
+        android:src="@drawable/wd_1"
+            android:background="#ffffffff"
+            android:layout_marginLeft="1dp"
+            android:cropToPadding="false"
+            android:longClickable="false" />
 
-        <ImageView
-        android:id="@+id/month_1"
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/date_bg_s"
+            android:id="@+id/date"
+            android:paddingLeft="5dp">
 
-        android:layout_width="wrap_content"
-        android:layout_height="20dp"
+            <ImageView
+            android:id="@+id/month_1"
 
-        android:contentDescription="h2"
-        android:src="@drawable/digit0"
-            android:maxHeight="20dp"
-            android:minHeight="20dp" />
-
-        <ImageView
-        android:id="@+id/month_2"
-
-        android:layout_width="wrap_content"
-        android:layout_height="20dp"
-
-        android:contentDescription="minIcon"
-        android:src="@drawable/digit0" />
-
-        <ImageView
-        android:id="@+id/month_icon"
-
-        android:layout_width="wrap_content"
-        android:layout_height="20dp"
-
-        android:contentDescription="m1"
-        android:src="@drawable/min_icon" />
-
-        <ImageView
-        android:id="@+id/day_1"
-
-        android:layout_width="wrap_content"
-        android:layout_height="20dp"
-
-        android:contentDescription="m2"
-        android:src="@drawable/digit0" />
-
-        <ImageView
-            android:id="@+id/day_2"
             android:layout_width="wrap_content"
-            android:layout_height="20dp"
+            android:layout_height="wrap_content"
+
+            android:contentDescription="month_1"
+            android:src="@drawable/digit_d0"
+                android:layout_gravity="center_vertical" />
+
+            <ImageView
+            android:id="@+id/month_2"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:contentDescription="month_2"
+            android:src="@drawable/digit_d0"
+                android:layout_gravity="center_vertical" />
+
+            <ImageView
+            android:id="@+id/month_icon"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:contentDescription="m1"
+            android:src="@drawable/month_icon"
+                android:layout_gravity="center_vertical"
+                android:paddingLeft="2dp"
+                android:paddingRight="2dp" />
+
+            <ImageView
+            android:id="@+id/day_1"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
             android:contentDescription="m2"
-            android:src="@drawable/digit0" />
+            android:src="@drawable/digit_d0"
+                android:layout_gravity="center_vertical"
+                android:paddingLeft="5dp" />
 
-        <ImageView
-        android:id="@+id/day_icon"
+            <ImageView
+                android:id="@+id/day_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="m2"
+                android:src="@drawable/digit_d0"
+                android:layout_gravity="center_vertical" />
 
-        android:layout_width="wrap_content"
-        android:layout_height="20dp"
+            <ImageView
+            android:id="@+id/day_icon"
 
-        android:contentDescription="minIcon"
-        android:src="@drawable/min_icon" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
 
-</LinearLayout>
+                android:src="@drawable/day_icon"
+                android:layout_gravity="center_vertical"
+                android:paddingLeft="2dp" />
+        </LinearLayout>
+
+    </LinearLayout>
 
 </LinearLayout>
