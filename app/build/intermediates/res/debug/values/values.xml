@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <!-- From: file:/D:/android_project/sidonia_clock/app/src/main/res/values/dimens.xml -->
-    <eat-comment/>
-    <dimen name="widget_margin">12dp</dimen>
-    <!-- From: file:/D:/android_project/sidonia_clock/app/src/main/res/values/strings.xml -->
-    <eat-comment/>
-    <string name="app_name">Sidonia Clock</string>
-</resources>
