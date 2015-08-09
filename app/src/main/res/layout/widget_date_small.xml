@@ -74,8 +74,8 @@
         android:layout_width="47dp"
         android:layout_height="47dp"
 
-        android:contentDescription="h1"
-        android:src="@drawable/wd_1"
+        android:contentDescription="weekday"
+        android:src="@drawable/wd_6"
             android:background="#ffffffff"
             android:cropToPadding="false"
             android:longClickable="false" />
