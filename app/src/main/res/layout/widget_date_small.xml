@@ -65,8 +65,9 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
         android:weightSum="1"
-        android:layout_marginTop="5dp"
-        android:background="@drawable/date_bg_s">
+        android:layout_marginTop="7dp"
+        android:background="@drawable/date_bg_s"
+        android:layout_marginLeft="0dp">
 
         <ImageView
         android:id="@+id/dw"
@@ -87,8 +88,8 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:id="@+id/date"
-            android:paddingLeft="7dp"
-            android:paddingRight="2dp">
+            android:paddingLeft="8dp"
+            android:paddingRight="5dp">
 
             <ImageView
             android:id="@+id/month_1"
@@ -119,7 +120,7 @@
             android:contentDescription="monthIcon"
             android:src="@drawable/month_icon"
                 android:layout_gravity="center_vertical"
-                android:layout_marginLeft="1dp"
+                android:layout_marginLeft="3dp"
                 android:layout_marginRight="1dp" />
 
             <ImageView
@@ -149,8 +150,7 @@
 
                 android:src="@drawable/day_icon"
                 android:layout_gravity="center_vertical"
-                android:layout_marginRight="2dp"
-                android:layout_marginLeft="1dp" />
+                android:layout_marginLeft="2dp" />
         </LinearLayout>
 
     </LinearLayout>
