@@ -27,10 +27,10 @@ import java.util.Calendar;
 
 class ResourceSelecter{
 
-    private final SimpleDateFormat SDF = new SimpleDateFormat("HHmm");
-    private final String STR = SDF.format(Calendar.getInstance().getTime());
-    private final char[] TIME_DIGIT = STR.toCharArray();
-    
+    private final SimpleDateFormat Time = new SimpleDateFormat("HHmm");
+    private final String TIME_STR = Time.format(Calendar.getInstance().getTime());
+    private final char[] TIME_DIGIT = TIME_STR.toCharArray();
+
     private final int H1 = selectPng(TIME_DIGIT[0]);
     private final int H2 = selectPng(TIME_DIGIT[1]);
     private final int M1 = selectPng(TIME_DIGIT[2]);
@@ -49,11 +49,12 @@ class ResourceSelecter{
 //        else{
 //            pngName = "digit"+ch;
 //        }
-//        
+//
 //        return getResources().getIdentifier(pngName, "drawable","jp.skr.autumnsky.SidoniaClockWidget");
 //    }
-     
-    /** 数字1文字のcharを受け取って対応するpngリソースIDをセット */
+
+    /** 数字1文字のcharを受け取って対応するpngリソースIDをセット
+     * 時刻スモールサイズ*/
     private int selectPng(char ch) {
         int id;
         switch (ch) {
@@ -92,7 +93,8 @@ class ResourceSelecter{
         }
         return id;
     }
-    /** 数字1文字のcharを受け取って対応するpngリソースIDをセット */
+    /** 数字1文字のcharを受け取って対応するpngリソースIDをセット
+     * 時刻ラージサイズ*/
     private int selectPngL(char ch) {
         int id;
         switch (ch) {
@@ -132,6 +134,88 @@ class ResourceSelecter{
         return id;
     }
 
+    private final SimpleDateFormat DATE = new SimpleDateFormat("MMdd");
+    private final String DATE_STR = DATE.format(Calendar.getInstance().getTime());
+    private final char[] DATE_DIGIT = DATE_STR.toCharArray();
+
+    private final int MON_1 = selectPngD(DATE_DIGIT[0]);
+    private final int MON_2 = selectPngD(DATE_DIGIT[1]);
+    private final int DAY_1 = selectPngD(DATE_DIGIT[2]);
+    private final int DAY_2 = selectPngD(DATE_DIGIT[3]);
+
+    /** 数字1文字のcharを受け取って対応するpngリソースIDをセット */
+    private int selectPngD(char ch) {
+        int id;
+        switch (ch) {
+            case '0':
+                id = R.drawable.digit_d0;
+                break;
+            case '1':
+                id = R.drawable.digit_d1;
+                break;
+            case '2':
+                id = R.drawable.digit_d2;
+                break;
+            case '3':
+                id = R.drawable.digit_d3;
+                break;
+            case '4':
+                id = R.drawable.digit_d4;
+                break;
+            case '5':
+                id = R.drawable.digit_d5;
+                break;
+            case '6':
+                id = R.drawable.digit_d6;
+                break;
+            case '7':
+                id = R.drawable.digit_d7;
+                break;
+            case '8':
+                id = R.drawable.digit_d8;
+                break;
+            case '9':
+                id = R.drawable.digit_d9;
+                break;
+            default:
+                id = R.drawable.digit_d0;
+        }
+        return id;
+    }
+
+    private final Calendar cal = Calendar.getInstance();
+    private final int DW = selectPngWd(cal.get(Calendar.DAY_OF_WEEK));
+
+    private int selectPngWd(int wd) {
+        int id;
+        switch (wd) {
+            case '1':
+                id = R.drawable.wd_1;
+                break;
+            case '2':
+                id = R.drawable.wd_2;
+                break;
+            case '3':
+                id = R.drawable.wd_3;
+                break;
+            case '4':
+                id = R.drawable.wd_4;
+                break;
+            case '5':
+                id = R.drawable.wd_5;
+                break;
+            case '6':
+                id = R.drawable.wd_6;
+                break;
+            case '7':
+                id = R.drawable.wd_7;
+                break;
+            default:
+                id = R.drawable.wd_1;
+        }
+        return id;
+    }
+
     public int getH1() {
         return this.H1;
     }
@@ -147,7 +231,7 @@ class ResourceSelecter{
     public int getM2() {
         return this.M2;
     }
-    
+
     public int getH1L() {
         return this.H1L;
     }
@@ -163,5 +247,25 @@ class ResourceSelecter{
     public int getM2L() {
         return this.M2L;
     }
-        
+
+    public int getMON_1() {
+        return this.MON_1;
+    }
+
+    public int getMON_2() {
+        return this.MON_2;
+    }
+
+    public int getDAY_1() {
+        return this.DAY_1;
+    }
+
+    public int getDAY_2() {
+        return this.DAY_2;
+    }
+
+    public int getDw() {
+        return this.DW;
+            }
+
 }

@@ -69,16 +69,17 @@
         android:background="@drawable/date_bg_s">
 
         <ImageView
-        android:id="@+id/weekday"
+        android:id="@+id/dw"
 
         android:layout_width="47dp"
         android:layout_height="47dp"
 
-        android:contentDescription="weekday"
+        android:contentDescription="Day of Week"
         android:src="@drawable/wd_6"
             android:background="#ffffffff"
             android:cropToPadding="false"
-            android:longClickable="false" />
+            android:longClickable="false"
+            android:focusableInTouchMode="true" />
 
         <LinearLayout
             android:orientation="horizontal"

@@ -66,7 +66,15 @@ public class ClockWidgetDateSmall extends ClockWidgetBase {
         rv.setImageViewResource(R.id.min_1, rs.getM1());
         rv.setImageViewResource(R.id.min_2, rs.getM2());
 
+        rv.setImageViewResource(R.id.dw, rs.getDw());
+
+        rv.setImageViewResource(R.id.month_1, rs.getMON_1());
+        rv.setImageViewResource(R.id.month_2, rs.getMON_2());
+        rv.setImageViewResource(R.id.day_1, rs.getDAY_1());
+        rv.setImageViewResource(R.id.day_2, rs.getDAY_2());
+
         ap.updateAppWidget(cn, rv);
+
     }
 
 }

@@ -18,12 +18,11 @@ package jp.skr.autumnsky.SidoniaClockWidget;
 
 import android.app.AlarmManager;
 import android.app.PendingIntent;
-import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
-import java.text.SimpleDateFormat;
+import java.text.DateFormat;
 import java.util.Calendar;
 
 /**
@@ -51,7 +50,6 @@ public abstract class ClockWidgetBase extends AppWidgetProvider {
         am.cancel(pi);
     }
     
-    
     protected void setAlarm(Context context) {
         PendingIntent pi = makePendingIntent(context);
         AlarmManager am = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
@@ -59,18 +57,22 @@ public abstract class ClockWidgetBase extends AppWidgetProvider {
         cal.set(Calendar.SECOND, 0);
         cal.set(Calendar.MILLISECOND, 0);
         cal.add(Calendar.MINUTE, 1);
+
         Long nextMin = cal.getTimeInMillis();
-        SimpleDateFormat sdf_log = new SimpleDateFormat("HHmm");
-        Log.v("Alarm", "set");
-        Log.v("next", sdf_log.format(nextMin));
+
         am.setRepeating(AlarmManager.RTC, nextMin, 60000, pi);
+
+        DateFormat df = DateFormat.getDateTimeInstance() ;
+
+        Log.v("AlarmSet", df.toString());
+
     }
 
     protected PendingIntent makePendingIntent(Context context) {
         Intent alarmIntent = new Intent(context, this.getClass());
         alarmIntent.setAction("UPDATE_CLOCK_TIME");
-        PendingIntent operation = PendingIntent.getBroadcast(context, 0, alarmIntent, 0);
-        return operation;
+        PendingIntent pi = PendingIntent.getBroadcast(context, 0, alarmIntent, 0);
+        return pi;
     }
     
 }
