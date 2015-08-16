@@ -75,7 +75,7 @@
         android:layout_height="47dp"
 
         android:contentDescription="Day of Week"
-        android:src="@drawable/wd_6"
+        android:src="@drawable/wd_1"
             android:background="#ffffffff"
             android:cropToPadding="false"
             android:longClickable="false"
