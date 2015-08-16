@@ -184,34 +184,34 @@ class ResourceSelecter{
     }
 
     private final Calendar cal = Calendar.getInstance();
-    private final int DW = selectPngWd(cal.get(Calendar.DAY_OF_WEEK));
+    private final int DW = selectPngDw(cal.get(Calendar.DAY_OF_WEEK));
 
-    private int selectPngWd(int wd) {
+    private int selectPngDw(int dw) {
         int id;
-        switch (wd) {
-            case '1':
-                id = R.drawable.wd_1;
+        switch (dw) {
+            case 1:
+                id = R.drawable.dw_1;
                 break;
-            case '2':
-                id = R.drawable.wd_2;
+            case 2:
+                id = R.drawable.dw_2;
                 break;
-            case '3':
-                id = R.drawable.wd_3;
+            case 3:
+                id = R.drawable.dw_3;
                 break;
-            case '4':
-                id = R.drawable.wd_4;
+            case 4:
+                id = R.drawable.dw_4;
                 break;
-            case '5':
-                id = R.drawable.wd_5;
+            case 5:
+                id = R.drawable.dw_5;
                 break;
-            case '6':
-                id = R.drawable.wd_6;
+            case 6:
+                id = R.drawable.dw_6;
                 break;
-            case '7':
-                id = R.drawable.wd_7;
+            case 7:
+                id = R.drawable.dw_7;
                 break;
             default:
-                id = R.drawable.wd_1;
+                id = R.drawable.dw_1;
         }
         return id;
     }

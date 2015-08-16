@@ -23,12 +23,12 @@ import android.content.Intent;
 import android.widget.RemoteViews;
 
 /**
- * ClockWidget3x2
+ * ClockWidget4x3
  * 
  * @author Kitami Akiya
  */
 
-public class ClockWidgetDateSmall extends ClockWidgetBase {
+public class ClockWidgetDateLarge extends ClockWidgetBase {
     
     /** 配置されている全ウィジェットの時刻更新をかける
     /ResouceSelecterで時刻1桁ごとに対応する数字画像を呼び出して、
@@ -58,7 +58,7 @@ public class ClockWidgetDateSmall extends ClockWidgetBase {
         AppWidgetManager ap = AppWidgetManager.getInstance(context);
         ResourceSelecter rs = new ResourceSelecter();
         ComponentName cn = new ComponentName(context,this.getClass());
-        RemoteViews rv = new RemoteViews(context.getPackageName(), R.layout.widget_date_small);
+        RemoteViews rv = new RemoteViews(context.getPackageName(), R.layout.widget_date_large);
 
         /* imageViewにリソースを設定 */
         rv.setImageViewResource(R.id.hour_1, rs.getH1());
