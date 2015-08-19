@@ -34,7 +34,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:contentDescription="minIcon"
-            android:src="@drawable/hour_icon" />
+            android:src="@drawable/hour_icon"
+            android:layout_marginLeft="1dp"
+            android:layout_marginRight="1dp" />
 
         <ImageView
             android:id="@+id/min_1"
@@ -55,7 +57,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:contentDescription="minIcon"
-            android:src="@drawable/min_icon" />
+            android:src="@drawable/min_icon"
+            android:layout_marginLeft="1dp" />
     </LinearLayout>
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -64,10 +67,9 @@
     android:gravity="bottom"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-        android:weightSum="1"
         android:layout_marginTop="7dp"
         android:background="@drawable/date_bg_s"
-        android:layout_marginLeft="0dp">
+        android:layout_marginLeft="1dp">
 
         <ImageView
         android:id="@+id/dw"
@@ -88,7 +90,7 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:id="@+id/date"
-            android:paddingLeft="8dp"
+            android:paddingLeft="5dp"
             android:paddingRight="5dp">
 
             <ImageView
@@ -120,7 +122,7 @@
             android:contentDescription="monthIcon"
             android:src="@drawable/month_icon"
                 android:layout_gravity="center_vertical"
-                android:layout_marginLeft="3dp"
+                android:layout_marginLeft="2dp"
                 android:layout_marginRight="1dp" />
 
             <ImageView
@@ -132,7 +134,7 @@
             android:contentDescription="m2"
             android:src="@drawable/digit_d0"
                 android:layout_gravity="center_vertical"
-                android:layout_marginLeft="2dp" />
+                android:layout_marginLeft="1dp" />
 
             <ImageView
                 android:id="@+id/day_2"
@@ -149,8 +151,7 @@
             android:layout_height="wrap_content"
 
                 android:src="@drawable/day_icon"
-                android:layout_gravity="center_vertical"
-                android:layout_marginLeft="2dp" />
+                android:layout_gravity="center_vertical" />
         </LinearLayout>
 
     </LinearLayout>

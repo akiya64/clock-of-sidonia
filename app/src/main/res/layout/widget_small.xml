@@ -33,7 +33,9 @@
         android:layout_height="wrap_content"
 
         android:contentDescription="minIcon"
-        android:src="@drawable/hour_icon" />
+        android:src="@drawable/hour_icon"
+            android:layout_marginLeft="1dp"
+            android:layout_marginRight="1dp" />
 
         <ImageView
         android:id="@+id/iv_m1"
@@ -60,6 +62,7 @@
         android:layout_height="wrap_content"
 
         android:contentDescription="minIcon"
-        android:src="@drawable/min_icon" />
+        android:src="@drawable/min_icon"
+            android:layout_marginLeft="1dp" />
 
 </LinearLayout>
