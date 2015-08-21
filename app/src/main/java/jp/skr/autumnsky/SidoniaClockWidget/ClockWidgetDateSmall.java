@@ -61,17 +61,17 @@ public class ClockWidgetDateSmall extends ClockWidgetBase {
         RemoteViews rv = new RemoteViews(context.getPackageName(), R.layout.widget_date_small);
 
         /* imageViewにリソースを設定 */
-        rv.setImageViewResource(R.id.hour_1, rs.getH1());
-        rv.setImageViewResource(R.id.hour_2, rs.getH2());
-        rv.setImageViewResource(R.id.min_1, rs.getM1());
-        rv.setImageViewResource(R.id.min_2, rs.getM2());
+        rv.setImageViewResource(R.id.hour1, rs.getH1());
+        rv.setImageViewResource(R.id.hour2, rs.getH2());
+        rv.setImageViewResource(R.id.min1, rs.getM1());
+        rv.setImageViewResource(R.id.min2, rs.getM2());
 
         rv.setImageViewResource(R.id.dw, rs.getDw());
 
-        rv.setImageViewResource(R.id.month_1, rs.getMON_1());
-        rv.setImageViewResource(R.id.month_2, rs.getMON_2());
-        rv.setImageViewResource(R.id.day_1, rs.getDAY_1());
-        rv.setImageViewResource(R.id.day_2, rs.getDAY_2());
+        rv.setImageViewResource(R.id.month1, rs.getMON_1());
+        rv.setImageViewResource(R.id.month2, rs.getMON_2());
+        rv.setImageViewResource(R.id.day1, rs.getDAY_1());
+        rv.setImageViewResource(R.id.day2, rs.getDAY_2());
 
         ap.updateAppWidget(cn, rv);
 

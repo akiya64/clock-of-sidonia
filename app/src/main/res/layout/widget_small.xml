@@ -5,64 +5,58 @@
     android:gravity="bottom"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:padding="@dimen/widget_margin"
     android:background="@drawable/bg_s">
         
         <ImageView
-        android:id="@+id/iv_h1"
+        android:id="@+id/hour1"
         
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:contentDescription="h1"
-        android:src="@drawable/digit0" />
+            android:src="@drawable/digit0" />
 
         <ImageView
-        android:id="@+id/iv_h2"
+        android:id="@+id/hour2"
         
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:contentDescription="h2"
-        android:src="@drawable/digit0" />
+            android:src="@drawable/digit0" />
     
         <ImageView
-        android:id="@+id/iv_hour_icon"
+        android:id="@+id/hour_icon"
         
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
 
-        android:contentDescription="minIcon"
-        android:src="@drawable/hour_icon"
+            android:src="@drawable/hour_icon"
             android:layout_marginLeft="1dp"
-            android:layout_marginRight="1dp" />
+            android:layout_marginRight="1dp"
+            android:scaleType="center" />
 
         <ImageView
-        android:id="@+id/iv_m1"
+        android:id="@+id/min1"
         
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:contentDescription="m1"
-        android:src="@drawable/digit0" />
+            android:src="@drawable/digit0" />
 
         <ImageView
-        android:id="@+id/iv_m2"
+        android:id="@+id/min2"
         
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:contentDescription="m2"
-        android:src="@drawable/digit0" />
+            android:src="@drawable/digit0" />
                 
         <ImageView
-        android:id="@+id/iv_min_icon"
+        android:id="@+id/min_icon"
         
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:contentDescription="minIcon"
-        android:src="@drawable/min_icon"
+            android:src="@drawable/min_icon"
             android:layout_marginLeft="1dp" />
 
 </LinearLayout>

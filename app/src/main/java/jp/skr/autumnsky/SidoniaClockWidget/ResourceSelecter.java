@@ -216,29 +216,95 @@ class ResourceSelecter{
         return id;
     }
 
-    public int getH1() {
-        return this.H1;
+    private final int DW_L = selectPngDwL(cal.get(Calendar.DAY_OF_WEEK));
+
+    private int selectPngDwL(int dw) {
+        int id;
+        switch (dw) {
+            case 1:
+                id = R.drawable.dw_1l;
+                break;
+            case 2:
+                id = R.drawable.dw_2l;
+                break;
+            case 3:
+                id = R.drawable.dw_3l;
+                break;
+            case 4:
+                id = R.drawable.dw_4l;
+                break;
+            case 5:
+                id = R.drawable.dw_5l;
+                break;
+            case 6:
+                id = R.drawable.dw_6l;
+                break;
+            case 7:
+                id = R.drawable.dw_7l;
+                break;
+            default:
+                id = R.drawable.dw_1l;
+        }
+        return id;
     }
 
-    public int getH2() {
-        return this.H2;
+    private final int MON_1_L = selectPngDL(DATE_DIGIT[0]);
+    private final int MON_2_L = selectPngDL(DATE_DIGIT[1]);
+    private final int DAY_1_L = selectPngDL(DATE_DIGIT[2]);
+    private final int DAY_2_L = selectPngDL(DATE_DIGIT[3]);
+
+    /** 数字1文字のcharを受け取って対応するpngリソースIDをセット */
+    private int selectPngDL(char ch) {
+        int id;
+        switch (ch) {
+            case '0':
+                id = R.drawable.digit_d0l;
+                break;
+            case '1':
+                id = R.drawable.digit_d1l;
+                break;
+            case '2':
+                id = R.drawable.digit_d2l;
+                break;
+            case '3':
+                id = R.drawable.digit_d3l;
+                break;
+            case '4':
+                id = R.drawable.digit_d4l;
+                break;
+            case '5':
+                id = R.drawable.digit_d5l;
+                break;
+            case '6':
+                id = R.drawable.digit_d6l;
+                break;
+            case '7':
+                id = R.drawable.digit_d7l;
+                break;
+            case '8':
+                id = R.drawable.digit_d8l;
+                break;
+            case '9':
+                id = R.drawable.digit_d9l;
+                break;
+            default:
+                id = R.drawable.digit_d0l;
+        }
+        return id;
     }
 
-    public int getM1() {
-        return this.M1;
-    }
 
-    public int getM2() {
-        return this.M2;
-    }
+    public int getH1() { return this.H1; }
 
-    public int getH1L() {
-        return this.H1L;
-    }
+    public int getH2() { return this.H2; }
 
-    public int getH2L() {
-        return this.H2L;
-    }
+    public int getM1() { return this.M1; }
+
+    public int getM2() { return this.M2; }
+
+    public int getH1L() { return this.H1L; }
+
+    public int getH2L() { return this.H2L; }
 
     public int getM1L() {
         return this.M1L;
@@ -264,8 +330,20 @@ class ResourceSelecter{
         return this.DAY_2;
     }
 
-    public int getDw() {
-        return this.DW;
-            }
+    public int getDw() { return this.DW; }
+
+    public int getMON_1L() { return this.MON_1_L;}
+
+    public int getMON_2L() { return this.MON_2_L; }
+
+    public int getDAY_1L() {
+        return this.DAY_1_L;
+    }
+
+    public int getDAY_2L() {
+        return this.DAY_2_L;
+    }
+
+    public int getDwL() {return this.DW_L; }
 
 }

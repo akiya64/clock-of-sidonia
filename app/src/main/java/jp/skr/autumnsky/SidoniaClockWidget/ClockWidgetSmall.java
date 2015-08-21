@@ -61,10 +61,10 @@ public class ClockWidgetSmall extends ClockWidgetBase {
         RemoteViews rv = new RemoteViews(context.getPackageName(), R.layout.widget_small);
 
         /* imageViewにリソースを設定 */
-        rv.setImageViewResource(R.id.iv_h1, rs.getH1());
-        rv.setImageViewResource(R.id.iv_h2, rs.getH2());
-        rv.setImageViewResource(R.id.iv_m1, rs.getM1());
-        rv.setImageViewResource(R.id.iv_m2, rs.getM2());
+        rv.setImageViewResource(R.id.hour1, rs.getH1());
+        rv.setImageViewResource(R.id.hour2, rs.getH2());
+        rv.setImageViewResource(R.id.min1, rs.getM1());
+        rv.setImageViewResource(R.id.min2, rs.getM2());
 
         ap.updateAppWidget(cn, rv);
     }
