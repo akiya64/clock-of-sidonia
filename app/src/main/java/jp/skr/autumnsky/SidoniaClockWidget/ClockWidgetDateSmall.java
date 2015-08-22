@@ -17,7 +17,6 @@
 package jp.skr.autumnsky.SidoniaClockWidget;
 
 import android.appwidget.AppWidgetManager;
-import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.widget.RemoteViews;
@@ -40,7 +39,7 @@ public class ClockWidgetDateSmall extends ClockWidgetBase {
         for (int i = 0; i < N; i++) {
             int appWidgetId = appWidgetIds[i];
 
-            RemoteViews rv = new RemoteViews(context.getPackageName(), R.layout.widget_date_small);
+            RemoteViews rv = new RemoteViews(context.getPackageName(), R.layout.widget_small);
             updateClock(context,rv);
             updateCalendar(context, rv);
         }
@@ -52,7 +51,7 @@ public class ClockWidgetDateSmall extends ClockWidgetBase {
         super.onReceive(context, intent);
         if (intent.getAction().equals("UPDATE_CLOCK_TIME")) {
 
-            RemoteViews rv = new RemoteViews(context.getPackageName(), R.layout.widget_date_small);
+            RemoteViews rv = new RemoteViews(context.getPackageName(), R.layout.widget_small);
             updateClock(context,rv);
             updateCalendar(context,rv);
         }

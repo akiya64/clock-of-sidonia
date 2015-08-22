@@ -17,7 +17,6 @@
 package jp.skr.autumnsky.SidoniaClockWidget;
 
 import android.appwidget.AppWidgetManager;
-import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.widget.RemoteViews;

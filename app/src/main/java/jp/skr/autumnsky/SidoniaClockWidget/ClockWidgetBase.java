@@ -26,9 +26,6 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.util.Log;
 import android.widget.RemoteViews;
-
-import java.net.FileNameMap;
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
