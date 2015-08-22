@@ -17,15 +17,10 @@
 package jp.skr.autumnsky.SidoniaClockWidget;
 
 import android.appwidget.AppWidgetManager;
-import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.widget.RemoteViews;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.List;
+
 
 
 /**
@@ -36,9 +31,11 @@ import java.util.List;
 
 public class ClockWidgetSmall extends ClockWidgetBase {
 
-    /** 配置されている全ウィジェットの時刻更新をかける
-    /ResouceSelecterで時刻1桁ごとに対応する数字画像を呼び出して、
-    /各数字のImageViewのソースを更新する*/
+    /**
+     * 配置されている全ウィジェットの時刻更新をかける
+     * /ResouceSelecterで時刻1桁ごとに対応する数字画像を呼び出して、
+     * /各数字のImageViewのソースを更新する
+     */
     @Override
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
         super.onUpdate(context, appWidgetManager, appWidgetIds);
@@ -46,9 +43,9 @@ public class ClockWidgetSmall extends ClockWidgetBase {
         for (int i = 0; i < N; i++) {
             int appWidgetId = appWidgetIds[i];
 
-            RemoteViews rv = new RemoteViews(context.getPackageName(),R.layout.widget_small);
-            updateClock(context,rv);
-            
+            RemoteViews rv = new RemoteViews(context.getPackageName(), R.layout.widget_small);
+            updateClock(context, rv);
+
         }
     }
 
@@ -58,9 +55,8 @@ public class ClockWidgetSmall extends ClockWidgetBase {
         super.onReceive(context, intent);
         if (intent.getAction().equals("UPDATE_CLOCK_TIME")) {
 
-            RemoteViews rv = new RemoteViews(context.getPackageName(),R.layout.widget_small);
-            updateClock(context,rv);
-
+            RemoteViews rv = new RemoteViews(context.getPackageName(), R.layout.widget_small);
+            updateClock(context, rv);
         }
     }
 }
