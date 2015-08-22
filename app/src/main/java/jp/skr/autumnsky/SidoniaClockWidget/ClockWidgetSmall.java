@@ -20,7 +20,11 @@ import android.appwidget.AppWidgetManager;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.widget.RemoteViews;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 
 /**
  * ClockWidget3x1
@@ -53,18 +57,38 @@ public class ClockWidgetSmall extends ClockWidgetBase {
             updateClock(context);
         }
     }
-    
+
+    /*時刻のアップデート処理*/
     private void updateClock(Context context){
+
+        /*ウイジェットのイメージビュー書き換えに必要なクラスを呼ぶ*/
         AppWidgetManager ap = AppWidgetManager.getInstance(context);
         ResourceSelecter rs = new ResourceSelecter();
         ComponentName cn = new ComponentName(context,this.getClass());
         RemoteViews rv = new RemoteViews(context.getPackageName(), R.layout.widget_small);
 
-        /* imageViewにリソースを設定 */
-        rv.setImageViewResource(R.id.hour1, rs.getH1());
-        rv.setImageViewResource(R.id.hour2, rs.getH2());
-        rv.setImageViewResource(R.id.min1, rs.getM1());
-        rv.setImageViewResource(R.id.min2, rs.getM2());
+        /*画像を名前で呼ぶためにリソースクラスをセット*/
+        Resources re = context.getResources();
+
+        /*時刻から対応する数字画像のIntセット*/
+        final SimpleDateFormat Time = new SimpleDateFormat("HHmm");
+        final String TIME_STR = Time.format(Calendar.getInstance().getTime());
+        final char[] TIME_DIGIT = TIME_STR.toCharArray();
+
+        /*手続き言語っぽい*/
+        int[] digitPng = new int[4];
+        int i = 0;
+
+        for(char digit: TIME_DIGIT){
+            digitPng[i] = re.getIdentifier("digit"+digit,"drawable","jp.skr.autumnsky.SidoniaClockWidget");
+            i++;
+        }
+
+        /* imageViewにリソースを設定して更新*/
+        rv.setImageViewResource(R.id.hour1, digitPng[0]);
+        rv.setImageViewResource(R.id.hour2, digitPng[1]);
+        rv.setImageViewResource(R.id.min1, digitPng[2]);
+        rv.setImageViewResource(R.id.min2, digitPng[3]);
 
         ap.updateAppWidget(cn, rv);
     }
