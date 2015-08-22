@@ -23,7 +23,9 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.widget.RemoteViews;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 
 /**
@@ -75,20 +77,17 @@ public class ClockWidgetSmall extends ClockWidgetBase {
         final String TIME_STR = Time.format(Calendar.getInstance().getTime());
         final char[] TIME_DIGIT = TIME_STR.toCharArray();
 
-        /*手続き言語っぽい*/
-        int[] digitPng = new int[4];
-        int i = 0;
+        List<Integer> digits = new ArrayList<Integer>();
 
         for(char digit: TIME_DIGIT){
-            digitPng[i] = re.getIdentifier("digit"+digit,"drawable","jp.skr.autumnsky.SidoniaClockWidget");
-            i++;
+            digits.add(re.getIdentifier("digit"+digit,"drawable","jp.skr.autumnsky.SidoniaClockWidget"));
         }
 
         /* imageViewにリソースを設定して更新*/
-        rv.setImageViewResource(R.id.hour1, digitPng[0]);
-        rv.setImageViewResource(R.id.hour2, digitPng[1]);
-        rv.setImageViewResource(R.id.min1, digitPng[2]);
-        rv.setImageViewResource(R.id.min2, digitPng[3]);
+        rv.setImageViewResource(R.id.hour1, digits.get(0));
+        rv.setImageViewResource(R.id.hour2, digits.get(1));
+        rv.setImageViewResource(R.id.min1, digits.get(2));
+        rv.setImageViewResource(R.id.min2, digits.get(3));
 
         ap.updateAppWidget(cn, rv);
     }
