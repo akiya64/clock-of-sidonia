@@ -40,7 +40,8 @@ public class ClockWidgetLarge extends ClockWidgetBase {
         for (int i = 0; i < N; i++) {
             int appWidgetId = appWidgetIds[i];
 
-            updateClock(context);
+            RemoteViews rv = new RemoteViews(context.getPackageName(), R.layout.widget_large);
+            updateClock(context,rv);
             
         }
     }
@@ -50,23 +51,10 @@ public class ClockWidgetLarge extends ClockWidgetBase {
     public void onReceive(Context context, Intent intent) {
         super.onReceive(context, intent);
         if (intent.getAction().equals("UPDATE_CLOCK_TIME")) {
-            updateClock(context);
+
+            RemoteViews rv = new RemoteViews(context.getPackageName(), R.layout.widget_large);
+            updateClock(context,rv);
+
         }
     }
-    
-    private void updateClock(Context context){
-        AppWidgetManager ap = AppWidgetManager.getInstance(context);
-        ResourceSelecter rs = new ResourceSelecter();
-        ComponentName cn = new ComponentName(context,this.getClass());
-        RemoteViews rv = new RemoteViews(context.getPackageName(), R.layout.widget_large);
-
-        /* imageViewにリソースを設定 */
-        rv.setImageViewResource(R.id.hour1, rs.getH1L());
-        rv.setImageViewResource(R.id.hour2, rs.getH2L());
-        rv.setImageViewResource(R.id.min1, rs.getM1L());
-        rv.setImageViewResource(R.id.min2, rs.getM2L());
-
-        ap.updateAppWidget(cn, rv);
-    }
-
 }

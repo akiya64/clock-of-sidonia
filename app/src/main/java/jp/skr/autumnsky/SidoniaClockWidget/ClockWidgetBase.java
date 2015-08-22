@@ -18,12 +18,21 @@ package jp.skr.autumnsky.SidoniaClockWidget;
 
 import android.app.AlarmManager;
 import android.app.PendingIntent;
+import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.util.Log;
+import android.widget.RemoteViews;
+
+import java.net.FileNameMap;
 import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 /**
  *ClockWidget Base Class
@@ -53,6 +62,7 @@ public abstract class ClockWidgetBase extends AppWidgetProvider {
     protected void setAlarm(Context context) {
         PendingIntent pi = makePendingIntent(context);
         AlarmManager am = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
+
         Calendar cal = Calendar.getInstance();
         cal.set(Calendar.SECOND, 0);
         cal.set(Calendar.MILLISECOND, 0);
@@ -62,10 +72,6 @@ public abstract class ClockWidgetBase extends AppWidgetProvider {
 
         am.setRepeating(AlarmManager.RTC, nextMin, 60000, pi);
 
-        DateFormat df = DateFormat.getDateTimeInstance() ;
-
-        Log.v("AlarmSet", df.toString());
-
     }
 
     protected PendingIntent makePendingIntent(Context context) {
@@ -74,5 +80,84 @@ public abstract class ClockWidgetBase extends AppWidgetProvider {
         PendingIntent pi = PendingIntent.getBroadcast(context, 0, alarmIntent, 0);
         return pi;
     }
-    
+    /*時刻のアップデート*/
+    protected void updateClock(Context context ,RemoteViews rv){
+
+        /*ウイジェットのイメージビュー書き換えに必要なクラスを呼ぶ*/
+        AppWidgetManager ap = AppWidgetManager.getInstance(context);
+        ComponentName cn = new ComponentName(context,this.getClass());
+
+        /*画像を名前で呼ぶためにリソースクラスをセット*/
+        Resources re = context.getResources();
+
+        /*時刻から対応する数字画像のIntセット*/
+        final SimpleDateFormat Time = new SimpleDateFormat("HHmm");
+        final String TIME_STR = Time.format(Calendar.getInstance().getTime());
+        final char[] TIME_DIGIT = TIME_STR.toCharArray();
+
+        List<Integer> digits = new ArrayList<Integer>();
+
+        String digitFile = "digit";
+
+        if (this.getClass().getSimpleName().endsWith("Large")){
+
+            digitFile += "_l_";
+
+        }
+
+        for(char digit: TIME_DIGIT){
+            digits.add(re.getIdentifier(digitFile + digit,"drawable","jp.skr.autumnsky.SidoniaClockWidget"));
+        }
+
+        /* imageViewにリソースを設定して更新*/
+        rv.setImageViewResource(R.id.hour1, digits.get(0));
+        rv.setImageViewResource(R.id.hour2, digits.get(1));
+        rv.setImageViewResource(R.id.min1, digits.get(2));
+        rv.setImageViewResource(R.id.min2, digits.get(3));
+
+        ap.updateAppWidget(cn, rv);
+    }
+
+    /*時刻のアップデート*/
+    protected void updateCalendar(Context context ,RemoteViews rv) {
+
+        /*ウイジェットのイメージビュー書き換えに必要なクラスを呼ぶ*/
+        AppWidgetManager ap = AppWidgetManager.getInstance(context);
+        ComponentName cn = new ComponentName(context, this.getClass());
+
+        /*画像を名前で呼ぶためにリソースクラスをセット*/
+        Resources re = context.getResources();
+
+        /*時刻から対応する数字画像のIntセット*/
+        final SimpleDateFormat DATE = new SimpleDateFormat("MMdd");
+        final String DATE_STR = DATE.format(Calendar.getInstance().getTime());
+        final char[] DATE_DIGIT = DATE_STR.toCharArray();
+
+        List<Integer> digits = new ArrayList<Integer>();
+
+        String digitFile = "digit_d";
+
+        if (this.getClass().getSimpleName().endsWith("Large")) { digitFile += "_l_"; }
+
+        for (char digit : DATE_DIGIT) {
+            digits.add(re.getIdentifier(digitFile + digit, "drawable", "jp.skr.autumnsky.SidoniaClockWidget"));
+        }
+
+        /*曜日画像*/
+        String dayOfWeek = "dw_";
+        if (this.getClass().getSimpleName().endsWith("Large")) { dayOfWeek += "_l_"; }
+
+        final Calendar cal = Calendar.getInstance();
+        final int DW = re.getIdentifier("dw_" + cal.get(Calendar.DAY_OF_WEEK), "drawable", "jp.skr.autumnsky.SidoniaClockWidget");
+
+        /* imageViewにリソースを設定して更新*/
+        rv.setImageViewResource(R.id.month1, digits.get(0));
+        rv.setImageViewResource(R.id.month2, digits.get(1));
+        rv.setImageViewResource(R.id.day1, digits.get(2));
+        rv.setImageViewResource(R.id.day2, digits.get(3));
+
+        rv.setImageViewResource(R.id.dw,DW);
+
+        ap.updateAppWidget(cn, rv);
+    }
 }

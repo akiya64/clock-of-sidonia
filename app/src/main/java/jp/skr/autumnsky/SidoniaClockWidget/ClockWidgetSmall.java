@@ -46,7 +46,8 @@ public class ClockWidgetSmall extends ClockWidgetBase {
         for (int i = 0; i < N; i++) {
             int appWidgetId = appWidgetIds[i];
 
-            updateClock(context);
+            RemoteViews rv = new RemoteViews(context.getPackageName(),R.layout.widget_small);
+            updateClock(context,rv);
             
         }
     }
@@ -56,40 +57,10 @@ public class ClockWidgetSmall extends ClockWidgetBase {
     public void onReceive(Context context, Intent intent) {
         super.onReceive(context, intent);
         if (intent.getAction().equals("UPDATE_CLOCK_TIME")) {
-            updateClock(context);
+
+            RemoteViews rv = new RemoteViews(context.getPackageName(),R.layout.widget_small);
+            updateClock(context,rv);
+
         }
     }
-
-    /*時刻のアップデート処理*/
-    private void updateClock(Context context){
-
-        /*ウイジェットのイメージビュー書き換えに必要なクラスを呼ぶ*/
-        AppWidgetManager ap = AppWidgetManager.getInstance(context);
-        ResourceSelecter rs = new ResourceSelecter();
-        ComponentName cn = new ComponentName(context,this.getClass());
-        RemoteViews rv = new RemoteViews(context.getPackageName(), R.layout.widget_small);
-
-        /*画像を名前で呼ぶためにリソースクラスをセット*/
-        Resources re = context.getResources();
-
-        /*時刻から対応する数字画像のIntセット*/
-        final SimpleDateFormat Time = new SimpleDateFormat("HHmm");
-        final String TIME_STR = Time.format(Calendar.getInstance().getTime());
-        final char[] TIME_DIGIT = TIME_STR.toCharArray();
-
-        List<Integer> digits = new ArrayList<Integer>();
-
-        for(char digit: TIME_DIGIT){
-            digits.add(re.getIdentifier("digit"+digit,"drawable","jp.skr.autumnsky.SidoniaClockWidget"));
-        }
-
-        /* imageViewにリソースを設定して更新*/
-        rv.setImageViewResource(R.id.hour1, digits.get(0));
-        rv.setImageViewResource(R.id.hour2, digits.get(1));
-        rv.setImageViewResource(R.id.min1, digits.get(2));
-        rv.setImageViewResource(R.id.min2, digits.get(3));
-
-        ap.updateAppWidget(cn, rv);
-    }
-
 }

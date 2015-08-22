@@ -61,11 +61,10 @@
     android:orientation="horizontal"
     android:gravity="bottom"
     android:layout_width="match_parent"
-    android:layout_height="fill_parent"
+    android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        android:background="@drawable/date_bg_s">
+        android:layout_marginRight="5dp">
 
         <ImageView
         android:id="@+id/dw"
@@ -84,7 +83,7 @@
             android:id="@+id/date"
             android:paddingLeft="4dp"
             android:paddingRight="4dp"
-            android:layout_marginLeft="4dp">
+            android:background="@drawable/date_bg_s">
 
             <ImageView
             android:id="@+id/month1"
@@ -94,7 +93,8 @@
 
             android:contentDescription="month_1"
             android:src="@drawable/digit_d0"
-                android:layout_gravity="center_vertical" />
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5dp" />
 
             <ImageView
             android:id="@+id/month2"
