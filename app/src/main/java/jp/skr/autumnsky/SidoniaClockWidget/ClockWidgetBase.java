@@ -142,8 +142,8 @@ public abstract class ClockWidgetBase extends AppWidgetProvider {
         }
 
         /*曜日画像*/
-        String dayOfWeek = "dw_";
-        if (this.getClass().getSimpleName().endsWith("Large")) { dayOfWeek += "_l_"; }
+        String dwFile = "dw_";
+        if (this.getClass().getSimpleName().endsWith("Large")) { dwFile += "_l_"; }
 
         final Calendar cal = Calendar.getInstance();
         final int DW = re.getIdentifier("dw_" + cal.get(Calendar.DAY_OF_WEEK), "drawable", "jp.skr.autumnsky.SidoniaClockWidget");
