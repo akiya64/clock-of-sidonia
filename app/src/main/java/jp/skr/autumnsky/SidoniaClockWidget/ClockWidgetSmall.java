@@ -21,8 +21,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.widget.RemoteViews;
 
-
-
 /**
  * ClockWidget3x1
  * 

@@ -77,6 +77,7 @@ public abstract class ClockWidgetBase extends AppWidgetProvider {
         PendingIntent pi = PendingIntent.getBroadcast(context, 0, alarmIntent, 0);
         return pi;
     }
+
     /*時刻のアップデート*/
     protected void updateClock(Context context ,RemoteViews rv){
 
@@ -115,7 +116,7 @@ public abstract class ClockWidgetBase extends AppWidgetProvider {
         ap.updateAppWidget(cn, rv);
     }
 
-    /*時刻のアップデート*/
+    /*曜日・日付のアップデート*/
     protected void updateCalendar(Context context ,RemoteViews rv) {
 
         /*ウイジェットのイメージビュー書き換えに必要なクラスを呼ぶ*/

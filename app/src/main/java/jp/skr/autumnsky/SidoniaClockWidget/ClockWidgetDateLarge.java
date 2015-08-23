@@ -21,8 +21,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.widget.RemoteViews;
 
-import java.util.Calendar;
-
 /**
  * ClockWidget4x3
  * 
