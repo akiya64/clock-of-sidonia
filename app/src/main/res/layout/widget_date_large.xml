@@ -60,7 +60,6 @@
         android:layout_height="wrap_content"
         android:weightSum="1"
         android:layout_marginTop="11dp"
-        android:background="@drawable/date_bg_s"
         android:layout_gravity="bottom"
         android:layout_marginLeft="7dp"
         android:layout_marginRight="7dp">
@@ -78,7 +77,8 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:id="@+id/linearLayout"
-            android:padding="3dp">
+            android:padding="3dp"
+            android:background="@drawable/date_bg_l">
 
             <ImageView
                 android:id="@+id/month1"

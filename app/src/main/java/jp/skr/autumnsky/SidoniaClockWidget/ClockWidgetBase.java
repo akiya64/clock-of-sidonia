@@ -97,11 +97,7 @@ public abstract class ClockWidgetBase extends AppWidgetProvider {
 
         String digitFile = "digit";
 
-        if (this.getClass().getSimpleName().endsWith("Large")){
-
-            digitFile += "_l_";
-
-        }
+        if (this.getClass().getSimpleName().endsWith("Large")) { digitFile += "_l_"; }
 
         for(char digit: TIME_DIGIT){
             digits.add(re.getIdentifier(digitFile + digit,"drawable","jp.skr.autumnsky.SidoniaClockWidget"));
@@ -137,16 +133,16 @@ public abstract class ClockWidgetBase extends AppWidgetProvider {
 
         if (this.getClass().getSimpleName().endsWith("Large")) { digitFile += "_l_"; }
 
-        for (char digit : DATE_DIGIT) {
+        for (char digit: DATE_DIGIT) {
             digits.add(re.getIdentifier(digitFile + digit, "drawable", "jp.skr.autumnsky.SidoniaClockWidget"));
         }
 
         /*曜日画像*/
         String dwFile = "dw_";
-        if (this.getClass().getSimpleName().endsWith("Large")) { dwFile += "_l_"; }
+        if (this.getClass().getSimpleName().endsWith("Large")) { dwFile += "l_"; }
 
         final Calendar cal = Calendar.getInstance();
-        final int DW = re.getIdentifier("dw_" + cal.get(Calendar.DAY_OF_WEEK), "drawable", "jp.skr.autumnsky.SidoniaClockWidget");
+        final int DW = re.getIdentifier(dwFile + cal.get(Calendar.DAY_OF_WEEK), "drawable", "jp.skr.autumnsky.SidoniaClockWidget");
 
         /* imageViewにリソースを設定して更新*/
         rv.setImageViewResource(R.id.month1, digits.get(0));

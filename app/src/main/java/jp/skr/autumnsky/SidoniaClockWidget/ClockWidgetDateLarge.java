@@ -30,7 +30,6 @@ import android.widget.RemoteViews;
 public class ClockWidgetDateLarge extends ClockWidgetBase {
     
     /** 配置されている全ウィジェットの時刻更新をかける
-    /ResouceSelecterで時刻1桁ごとに対応する数字画像を呼び出して、
     /各数字のImageViewのソースを更新する*/
     @Override
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
@@ -41,7 +40,7 @@ public class ClockWidgetDateLarge extends ClockWidgetBase {
 
             RemoteViews rv = new RemoteViews(context.getPackageName(), R.layout.widget_date_large);
             updateClock(context,rv);
-            updateCalendar(context, rv);
+            updateCalendar(context,rv);
             
         }
     }
@@ -54,7 +53,7 @@ public class ClockWidgetDateLarge extends ClockWidgetBase {
 
             RemoteViews rv = new RemoteViews(context.getPackageName(), R.layout.widget_date_large);
             updateClock(context,rv);
-            updateCalendar(context, rv);
+            updateCalendar(context,rv);
 
         }
     }
